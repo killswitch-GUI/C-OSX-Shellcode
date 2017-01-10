@@ -19,3 +19,26 @@ In this project we have a few diffrent types of shell code that I have built as 
 
 ### System Execve /bin/sh
 This code uses inline ASM in C for system call and executes a /bin/sh as an example. 
+
+## Shellcode loader
+
+in the /loader folder you will find 2 loader examples, the Python and C based loader. Basic shellcode loader and best part is its pure python using ctypes and std C lib.
+
+### Python Example:
+`python loader.py ../shellcode/system-execve-shell.sc`
+
+```
+MacBook-Pro:loader test$ python loader.py ../shellcode/system-execve-shell.sc 
+-------------------------------------------
+* C runtime libary loaded: /usr/lib/libSystem.B.dylib
+* Current page size: 4096
+* Shellcode buffer pointer: <__main__.LP_c_int object at 0x10f56b950>
+* Shellcode file size: 122
+* Shellcode file pointer: <__main__.LP_c_int object at 0x10f56b950>
+-------------------------------------------
+- Shellcode buffer now RX memory
+- Casting pointer to: <__main__.LP_c_int object at 0x10f56b950> 
+- Executing shellcode
+bash-3.2$ exit
+exit
+```
