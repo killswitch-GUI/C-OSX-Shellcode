@@ -18,9 +18,6 @@ if (len(sys.argv) != 2) :
 	print "\nExample: python loader.py shellcode_file.sc\n"
 	exit()
 
-def deref(addr, typ):
-    return ctypes.cast(addr, ctypes.POINTER(typ)).contents
-
 print "-------------------------------------------"
 libc = ctypes.CDLL(OSX_LIBC_DYLIB, use_errno=True)
 libc.restype = ctypes.c_void_p
