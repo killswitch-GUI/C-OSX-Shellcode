@@ -42,3 +42,6 @@ MacBook-Pro:loader test$ python loader.py ../shellcode/system-execve-shell.sc
 bash-3.2$ exit
 exit
 ```
+
+#### Credit
+Thanks for the great resource: https://github.com/tbarabosch/MacRE
